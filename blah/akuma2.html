@@ -1,0 +1,37 @@
+ <html>
+ <head>
+ <link rel="stylesheet" type="text/css" href="akuma2.css" />
+ </head>
+ <body background="final.jpeg">
+ <h1 font-family="Georgia" > <font color="white"> WEATHER FORECAST </font><h1>
+ 
+ 
+ <font color="white">
+ <form name="myForm" id="myForm" action="/action_page.php"  method="post">
+
+ Lat: <input type="number" size="2" id="lat" name="lat" min="-180" max="+180" value="32"><br>
+ Lon: <input type="number" size="2" id="lon" name="lon" min="-180" max="+180" value="32"><br>
+ 
+<input type="submit" value="Submit">
+</form>
+
+<br>
+<form name="myForm" id="myForm" action="/action_page.php"  method="post">
+
+
+  Postal Code: <input type="number"  id="postal_code" name="postal_code"><br>
+
+<input type="submit" value="Submit">
+</form>
+<br>
+<form name="myForm" id="myForm" action="/action_page.php"  method="post">
+
+
+Enter IP_address <input type="text" id="ip" name="ip" required pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"><br>
+<input type="submit" value="Submit">
+
+</form>
+<br>
+ </body>
+ </html>
+ 

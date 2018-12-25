@@ -1,0 +1,62 @@
+import ApiXu.ApiXu ais axu
+import DarkSky.DarkSky as ds
+import OpenWeather.OpenWeather as ow
+import WeatherBit.WeatherBit as wb
+import json
+
+def ds_parse_lat_lon(lat,lon):
+    content_ds = ds.getData_by_lat_lon(lat,lon)
+    return content_ds
+def ds_parse_acc_city(city):
+    content_ds = ds.getData_by_City(city)
+    return content_ds
+def ds_parse_acc_postal_code(pincode):
+    content_ds = ds.getData_by_Postalcode(pincode)
+    return content_ds
+def ds_parse_acc_ip_add(ip_address):
+    content_ds = ds.getData_by_ip(ip_address)
+    return content_ds
+
+
+def ow_parse_lat_lon(lat,lon):
+    content_ow = ow.getData_by_lat_lon(lat,lon)
+    return content_ow
+def ow_parse_acc_city(city):
+    content_ow = ow.getData_by_City(city)
+    return content_ow
+def ow_parse_acc_postal_code(pincode):
+    content_ow = ow.getData_by_Postalcode(pincode)
+    return content_ow
+def ow_parse_acc_ip_add(ip_address):
+    content_ow = ow.getData_by_ip(ip_address)
+    return content_ow
+
+
+def axu_parse_lat_lon(lat,lon):
+    content_axu = axu.getData_by_lat_lon(lat,lon)
+    return content_axu
+def axu_parse_acc_city(city):
+    content_axu = axu.getData_by_City(city)
+    return content_axu
+def axu_parse_acc_postal_code(pincode):
+    content_axu = axu.getData_by_Postalcode(pincode)
+    return content_axu
+def axu_parse_acc_ip_add(ip_address):
+    content_axu = axu.getData_by_ip(ip_address)
+    return content_axu
+
+
+def wb_parse_lat_lon(lat,lon):
+    content_wb = wb.getData_by_lat_lon(lat,lon)
+    return content_wb
+def wb_parse_acc_city(city):
+    content_wb = wb.getData_by_City(city)
+    return content_wb
+def wb_parse_acc_postal_code(pincode):
+    content_wb = wb.getData_by_Postalcode(pincode)
+    return content_wb
+def wb_parse_acc_ip_add(ip_address):
+    content_wb = wb.getData_by_ip(ip_address)
+    return content_wb
+
+

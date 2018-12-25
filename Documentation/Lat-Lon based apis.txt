@@ -1,0 +1,9 @@
+Lat-lon based apis: 
+1). Dark Sky
+https://api.darksky.net/forecast/19ea13cc0bfc2639b10f4b121939e17f/19.076,72.8777
+2) Open Weather 
+https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=10fa7799f9d391c5d82d145f7699c628
+3). Weather bit 
+https://api.weatherbit.io/v2.0/current?lat=38.123&lon=-78.543&key=8c3c69db6d6e49ea9797b2b622c153a9 
+4) APIXU
+http://api.apixu.com/v1/current.json?key=5d7c612f83ee40c28e145919181912&q=27.96.98.12

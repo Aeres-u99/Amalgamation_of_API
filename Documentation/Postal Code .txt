@@ -1,0 +1,6 @@
+ 1). Weather Bit
+https://api.weatherbit.io/v2.0/current?postal_code=27601&country=US&key=8c3c69db6d6e49ea9797b2b622c153a9 
+2) Open Weather 
+https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=10fa7799f9d391c5d82d145f7699c628
+3) Apixu
+http://api.apixu.com/v1/current.json?key=5d7c612f83ee40c28e145919181912&q=421504

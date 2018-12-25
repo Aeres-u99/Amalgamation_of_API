@@ -1,0 +1,10 @@
+Well thinking about code after we have written it is irritating tbh, so I planned to write somethigns and my thoghts as I am going with the programming part
+NOw the thing we are working on is planned to be going this way that we acquire 1 of the three things 
+1) Ip address
+2) Ip address of the request
+3) Lat lon
+the above 2 will be used to obtain lat lon at the third end.
+everything and anything else is bound to be discarded
+Now with ip we are going to fetch the lattitudes and longitudes 
+that is, use ip-api.com to fetch the lat lon and use it 
+lat lon are parameters for weather api.

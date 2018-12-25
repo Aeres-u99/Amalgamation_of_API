@@ -1,0 +1,41 @@
+{
+  "latitude": 19.076,
+  "longitude": 72.8777,
+  "timezone": "Asia/Kolkata",
+  "currently": {
+    "time": 1545225921,
+    "summary": "Clear",
+    "icon": "clear-night",
+    "precipIntensity": 0,
+    "precipProbability": 0,
+    "temperature": 79,
+    "apparentTemperature": 79,
+    "dewPoint": 56.6,
+    "humidity": 0.46,
+    "pressure": 1014.31,
+    "windSpeed": 10.27,
+    "windGust": 13.38,
+    "windBearing": 330,
+    "cloudCover": 0.02,
+    "uvIndex": 0,
+    "visibility": 7.21,
+    "ozone": 215.41
+  }
+  ,
+  "daily": {
+    "summary": "No precipitation throughout the week, with high temperatures peaking at 88°F on Sunday.",
+    "icon": "clear-day"
+  },
+  "flags": {
+    "sources": [
+      "cmc",
+      "gfs",
+      "icon",
+      "isd",
+      "madis"
+    ],
+    "nearest-station": 1.099,
+    "units": "us"
+  },
+  "offset": 5.5
+}

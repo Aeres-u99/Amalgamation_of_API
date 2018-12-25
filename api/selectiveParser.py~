@@ -1,0 +1,218 @@
+import ApiXu.ApiXu as axu
+import DarkSky.DarkSky as ds
+import OpenWeather.OpenWeather as ow
+import WeatherBit.WeatherBit as wb
+import json
+
+def parse_acc_lat_lon(lat,lon):
+    content_ds = ds.getData_by_lat_lon(lat,lon)
+    content_ow = ow.getData_by_lat_lon(lat,lon)
+    content_axu = axu.getData_by_lat_lon(lat,lon)
+    content_wb = wb.getData_by_lat_lon(lat,lon)
+    toSend = data_collector(content_ds,content_ow,content_axu,content_wb)
+    return toSend
+
+def parse_acc_city(cityname):
+    content_ds = ds.getData_by_City(cityname)
+    content_ow = ow.getData_by_City(cityname)
+    content_axu = axu.getData_by_City(cityname)
+    content_wb = wb.getData_by_City(cityname)
+    toSend = data_collector(content_ds,content_ow,content_axu,content_wb)
+    return toSend
+
+def parse_acc_postal_code(postal_code):
+    content_ds = ds.getData_by_Postalcode(postal_code)
+    content_ow = ow.getData_by_Postalcode(postal_code)
+    content_axu = axu.getData_by_Postalcode(postal_code)
+    content_wb = wb.getData_by_Postalcode(postal_code)
+    toSend = data_collector(content_ds,content_ow,content_axu,content_wb)
+    return toSend
+
+def parse_acc_ip(ip_address):
+    content_ds = ds.getData_by_ip(ip_address)
+    content_ow = ow.getData_by_ip(ip_address)
+    content_axu = axu.getData_by_ip(ip_address)
+    content_wb = wb.getData_by_ip(ip_address)
+    toSend = data_collector(content_ds,content_ow,content_axu,content_wb)
+    return toSend
+
+
+def amalgamate_stuffs(theList):
+    data = " " 
+    for i in range(0,4):
+        if i == "null":
+            i+=1
+        data+=str(theList[i])
+        data+=","
+    return data
+
+def amalgamate_stuffs_in_float(theList):
+    data=0.0
+    for i in theList: 
+        if i == "null":
+            theList.pop(theList.index(i))
+        try:
+            data+=float(i)
+        except ValueError:
+            return theList[2]
+    return data/len(theList)
+   
+
+def data_collector(content_ds,content_ow,content_axu,content_wb):
+   
+    api_data = {
+            "lat":"",
+            "lon":"",
+            "country":"",
+            "sea_level":"",
+            "grnd_level":"",
+            "clouds":"",
+            "uv":"",
+            "timezone":"",
+            "summary":"",
+            "precipitation":"",
+            "temperature":"",
+            "dewpoint":"",
+            "humidity":"",
+            "pressure":"",
+            "windspeed":"",
+            "wind_dir":"",
+            "sunset":"",
+            "sunrise":"",
+            "elev_angle":"",
+            "vis":"",
+            }
+    lat = []
+    lon = []
+    summary = []
+    precipitation = []
+    temperature = []
+    dewpoint = []
+    humidity = []
+    pressure = []
+    windspeed = []
+    winddirn = []
+    uvindex = []
+    sunset =[]
+    sunrise = []
+    sea_level =[]
+    grnd_level = []
+    
+    lat.append(content_ds['latitude'])
+    lat.append(content_ow['coord']['lat'])
+    lat.append(content_axu['location']['lat'])
+    lat.append(content_wb['data'][0]['lat'])
+    
+    temperature.append(content_ds['currently']['temperature'])
+    temperature.append(content_ow['main']['temp'])
+    temperature.append(content_axu['current']['temp_c'])
+    temperature.append(content_wb['data'][0]['temp'])
+    
+    lon.append(content_ds['longitude'])
+    lon.append(content_ow['coord']['lon'])
+    lon.append(content_axu['location']['lon'])
+    lon.append(content_wb['data'][0]['lon'])
+ 
+    summary.append(content_ds['currently']['summary'])
+    summary.append(content_ow['weather'][0]['description'])
+    summary.append(content_axu['current']['condition']['text'])
+    summary.append(content_wb['data'][0]['weather']['description'])
+    
+    precipitation.append(content_ds['currently']['precipIntensity']) 
+    precipitation.append(" ")
+    precipitation.append(content_axu['current']['precip_mm'])
+    precipitation.append(content_wb['data'][0]['precip'])
+ 
+    dewpoint.append(content_ds['currently']['dewPoint'])     
+    dewpoint.append(" ")
+    dewpoint.append(" ")
+    dewpoint.append(content_wb['data'][0]['dewpt'])
+   
+    humidity.append(content_ds['currently']['humidity']) 
+    humidity.append(content_ow['main']['humidity'])
+    humidity.append(content_axu['current']['humidity'])
+    humidity.append(" ")
+   
+    pressure.append(content_ds['currently']['pressure']) 
+    pressure.append(content_ow['main']['pressure'])
+    pressure.append(content_axu['current']['pressure_mb'])
+    pressure.append(content_wb['data'][0]['pres'])
+   
+    windspeed.append(content_ds['currently']['windSpeed']) 
+    windspeed.append(content_ow['wind']['speed'])
+    windspeed.append(content_axu['current']['wind_kph'])
+    windspeed.append(content_wb['data'][0]['wind_spd'])
+
+    try:
+        sea_level.append(content_ow['main']['sea_level'])
+        grnd_level.append(content_ow['main']['grnd_level'])
+    except KeyError:
+        sea_level.append("NA")
+        grnd_level.append("NA")
+    
+    sunset.append(content_wb['data'][0]['sunset'])
+    sunrise.append(content_wb['data'][0]['sunrise'])
+    try:
+
+        winddirn.append(" ") 
+        winddirn.append(content_ow['wind']['deg'])
+        winddirn.append(content_axu['current']['wind_dir'])
+        winddirn.append(content_wb['data'][0]['wind_dir'])
+    except KeyError:
+        winddirn.append("unavailable")
+
+    uvindex.append(content_ds['currently']['uvIndex']) 
+    uvindex.append(" ")
+    uvindex.append(content_axu['current']['uv'])
+    uvindex.append(content_wb['data'][0]['uv'])
+    
+    
+
+    document_format = '''
+    print(content_ds['latitude'])
+    print(content_ow['coord']['lat'])
+    print(content_axu['location']['lat'])
+    print(content_wb['data']['lat'])
+    The thing that must be noted here is that this format if used in same sequence then 
+    while appending to the various list will always lead to a specific arrangement of 
+    data obtained from ds,ow,axu and wb
+    list_name = ['data_from_ds','data_from_ow','data_from_axu','data_from_wb']
+    now pass the data to amalgamate_stuffs function with the type as float for numerical
+    stffs and return them to our_api vars. once done with all of the stuffs, the dictionar
+    y of our data type will be pretty much ready.
+    ''' 
+    api_data['lat'] = amalgamate_stuffs_in_float(lat)
+    api_data['lon'] = amalgamate_stuffs_in_float(lon)
+    api_data['summary'] = amalgamate_stuffs(summary)
+    api_data['precipitation'] = content_axu['current']['precip_mm']
+    api_data['pressure'] = amalgamate_stuffs_in_float(pressure)
+    api_data['windspeed'] = amalgamate_stuffs_in_float(windspeed)
+    api_data['wind_dir'] = content_axu['current']['wind_dir']
+    api_data['sea_level'] = sea_level[0]
+    api_data['grnd_level'] = grnd_level[0]
+    api_data['sunset'] = sunset[0]
+    api_data['sunrise'] = sunrise[0]
+    api_data['uv'] = uvindex[1]
+    api_data['temperature'] = amalgamate_stuffs_in_float(temperature)
+    api_data['dewpoint'] = content_wb['data'][0]['dewpt']
+    api_data['humidity'] = content_axu['current']['humidity']
+    api_data['pressure'] = amalgamate_stuffs_in_float(pressure)
+    api_data['country'] = content_wb['data'][0]['city_name']
+    api_data['timezone'] = content_wb['data'][0]['timezone']
+    api_data['clouds'] = content_wb['data'][0]['clouds']
+    api_data['elev_angle'] = content_wb['data'][0]['elev_angle']
+    api_data['vis'] = content_axu['current']['vis_km']
+
+#    print(api_data)
+    return api_data
+'''
+test = parse_acc_lat_lon("32","32")
+test2 = parse_acc_city("thane")
+test3 = parse_acc_postal_code("10001")
+test4 = parse_acc_ip("27.98.76.54")
+
+print(test)
+print(test2)
+print(test3)
+print(test4)
+'''

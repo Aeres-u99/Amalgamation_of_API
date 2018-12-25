@@ -1,0 +1,45 @@
+{
+  "data": [
+    {
+      "wind_cdir": "SW",
+      "rh": 93,
+      "pod": "d",
+      "lon": -97.822,
+      "pres": 959.2,
+      "timezone": "America/Chicago",
+      "ob_time": "2018-12-19 17:51",
+      "country_code": "US",
+      "clouds": 100,
+      "vis": 0.5,
+      "solar_rad": 42.4,
+      "state_code": "KS",
+      "wind_spd": 2.24,
+      "lat": 37.751,
+      "wind_cdir_full": "southwest",
+      "slp": 1007.5,
+      "datetime": "2018-12-19:18",
+      "ts": 1545241860,
+      "station": "E6964",
+      "h_angle": 0,
+      "dewpt": 6.2,
+      "uv": 1.29395,
+      "dni": 830.345,
+      "wind_dir": 236,
+      "elev_angle": 25.0689,
+      "ghi": 424.039,
+      "dhi": 71.7719,
+      "precip": null,
+      "city_name": "Cheney",
+      "weather": {
+        "icon": "a05d",
+        "code": "741",
+        "description": "Fog"
+      },
+      "sunset": "23:15",
+      "temp": 7.2,
+      "sunrise": "13:40",
+      "app_temp": 5.8
+    }
+  ],
+  "count": 1
+}

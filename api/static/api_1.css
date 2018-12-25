@@ -1,0 +1,132 @@
+body {background-image:url("../images/back.png");}
+
+.topright{
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  font-size: 18px;
+}
+.main_wrapper{
+
+height:auto;
+margin:auto;
+
+}
+.header_wrapper{
+
+height:50px;
+margin:auto;
+text-align: center;
+background-color:white;
+
+
+
+}
+
+#lol{
+padding:20px;
+padding-top:30px;
+	
+  margin:50px;
+  
+}
+.code
+{
+max-width:40%;
+margin:50px;
+background-color:white;
+border-left-style: solid;
+}
+.key{color:#0f374a;font-weight:700}
+.string{color:#800}
+
+#space{
+	height:100px;
+	width:200px;
+	
+}
+
+
+
+#margin
+{
+margin:30px;
+background-color:white;
+border-left-style: solid;
+}
+
+
+
+
+
+
+
+
+
+#lol1{
+	width:50%;
+	height:40%;
+	font-family:Comic Sans MS;
+padding:20px;
+padding-top:30px;
+	    
+
+  margin:50px;
+  text-align: left;
+  line-height:2.5;
+}
+  strong{font-family:Comic Sans MS;
+	  font-weight:600}
+.mega_content_wrapper {
+	  box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);<br /> -webkit-box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);<br /> -moz-box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
+    background-color:#f2f2f2;
+
+     
+
+}
+.content_wrapper {
+    
+font-family:Comic Sans MS;
+     margin:auto;
+
+}
+
+#content_area {
+width:auto;
+
+float:right;
+background:none;
+border-width:2px;
+border-style:solid;
+}
+
+
+
+
+
+#lol3{
+	width:auto;
+	 -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+	font-family:Georgia;
+padding:20px;
+padding-top:20px;
+	    background-color:white;
+border-style: solid;
+  border-width: 5px;
+ margin:auto;
+  text-align: left;
+  line-height:1.5;
+}
+
+#credits{
+	
+	height:40px;
+	line-height:1.5;
+	font-family:Georgia;
+padding:20px;
+padding-bottom:60px;
+padding-top:20px;
+	
+}
