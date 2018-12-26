@@ -5,7 +5,7 @@ from urllib.request import urlopen as u
 
 
 api_url = "https://api.weatherbit.io/v2.0/current?"
-api_key = "8c3c69db6d6e49ea9797b2b622c153a9"
+api_key = ""
 
 def api_call(url):
     client=u(url)
