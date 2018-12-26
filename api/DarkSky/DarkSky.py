@@ -2,7 +2,7 @@ import json
 from urllib.request import urlopen
 
 api_url= "https://api.darksky.net/forecast/"
-api_key= "19ea13cc0bfc2639b10f4b121939e17f"
+api_key= ""
 
 def getData_by_lat_lon(lat,lon):
     lat=str(lat)
