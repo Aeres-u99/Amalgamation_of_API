@@ -3,7 +3,7 @@ import ipaddress as ip_
 from urllib.request import urlopen as u
 
 api_url = "https://api.apixu.com/v1/current.json?key="
-api_key = "5d7c612f83ee40c28e145919181912"
+api_key = ""
 
 
 
