@@ -4,7 +4,7 @@ from urllib.request import urlopen as u
 
 
 api_url="https://api.openweathermap.org/data/2.5/weather?"
-api_key="10fa7799f9d391c5d82d145f7699c628"
+api_key=""
 subpart = "appid="
 def api_call(url):
     client=u(url)
