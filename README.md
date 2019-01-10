@@ -11,7 +11,7 @@ An amalgamation of Multiple API's for weather forecasting and then making it an 
 Installing Flask: 
 [code] pip3 install requests flask json [/code]
 is what you mostly need. Here for the details
-http://flask.pocoo.org/docs/1.0/installation/
-https://docs.python.org/3/library/json.html
-http://docs.python-requests.org/en/master/
+http://flask.pocoo.org/docs/1.0/installation/    \n
+https://docs.python.org/3/library/json.html      \n
+http://docs.python-requests.org/en/master/       <br>
 
