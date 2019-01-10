@@ -25,14 +25,19 @@ http://docs.python-requests.org/en/master/
 
 How to run:
 
+First of all register for the services and then put the api_key and access urls in appropriate modules
+
 1] cd path/to/the/folder/where/repo/is
 2] cd api/
 3] python3 test.py 
 
 sample output: 
 
-%> python3 test.py                                                                                                               296ms  Thu, Jan 10, 2019  8:56:36 AM
- * Serving Flask app "test" (lazy loading)
+%> python3 test.py                                                                                                               296ms 
+
+ Thu, Jan 10, 2019  8:56:36 AM
+
+* Serving Flask app "test" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
    Use a production WSGI server instead.
